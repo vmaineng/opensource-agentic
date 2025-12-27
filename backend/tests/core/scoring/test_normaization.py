@@ -1,4 +1,4 @@
-from app.score.scoring.normalization import normalize_score
+from app.core.scoring.normalization import normalize_score
 
 def test_normalize_score():
     assert normalize_score(0,100) == 0
