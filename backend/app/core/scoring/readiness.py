@@ -1,11 +1,13 @@
 from typing import List
 
-ACTIVITY_WEIGHT = 0.5
-RESPONSIVENESS_WEIGHT = 0.5
+DEFAULT_READINESS_WEIGHTS = {
+    "activity": 0.5,
+    "responsiveness": 0.5,
+}
 
-def calculate_contribution_readiness_score(activity_score: int, responsiveness_score: int) -> int:
+def calculate_contribution_readiness_score(activity_score: int, responsiveness_score: int, weights: dict = DEFAULT_READINESS_WEIGHTS) -> int:
     weighted_activity = (
-        activity_score * ACTIVITY_WEIGHT + responsiveness_score * RESPONSIVENESS_WEIGHT
+        activity_score * weights['activity'] + responsiveness_score * weights['responsiveness']
     )
     return round(weighted_activity)
 

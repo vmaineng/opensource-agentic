@@ -25,3 +25,11 @@ def test_explanation_for_low_scores():
     reasons = explain_contribution_readiness(activity_score, responsiveness_score)
     assert "Low recent activity." in reasons
     assert "Slow maintainer responses." in reasons
+
+def test_custom_readiness_weights():
+    score = calculate_contribution_readiness_score(
+        activity_score=80,
+        responsiveness_score=40,
+        weights={"activity": 0.3, "responsiveness": 0.7}
+    )
+    assert score ==  52
