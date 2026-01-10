@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import List
 
 class Persona(Enum):
     JUNIOR_DEVELOPER = "junior_developer"
@@ -28,7 +29,7 @@ def explain_contribution_readiness(
     activity_score: int,
     responsiveness_score: int,
     persona: Persona = Persona.JUNIOR_DEVELOPER,
-) -> list[str]:
+) -> List[str]:
     reasons = []
 
     if activity_score < 40:
