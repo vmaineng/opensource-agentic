@@ -1,11 +1,11 @@
-from app.core.scoring.reading import Persona
+from app.core.scoring.readiness import Persona
 from app.core.agent.models import PersonaSelectionResult
 
 def auto_select_persona(metrics: dict) -> PersonaSelectionResult:
-    contributions = contributor_metrics.get("prior_contributions", 0)
-    experience = contributor_metrics.get("years_experience", 0)
+    contributions = metrics.get("prior_contributions", 0)
+    experience = metrics.get("years_experience", 0)
 
-    reasons = list[str] = []
+    reasons: list[str] = []
 
     if contributions < 5 and experience < 2:
         reasons.append("Few prior contributions and limited experience.")

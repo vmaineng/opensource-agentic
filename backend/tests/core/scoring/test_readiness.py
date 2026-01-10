@@ -5,7 +5,8 @@ def test_junior_persona_score():
         activity_score=80,
         responsiveness_score=40,
         persona=Persona.JUNIOR_DEVELOPER,
+        community_score=50
 
     )
-    assert score == 56
+    assert score == 55
     
